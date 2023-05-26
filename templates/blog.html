@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+    <div class="page-header-area" data-bg-img="{% static 'assets/img/photos/bg3.webp'%}">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-header-content">
+              <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Blog</h2>
+              <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1200">
+                <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-sep">//</li>
+                  <li>Blog</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start Blog Area Wrapper ==-->
+    <section class="blog-area blog-inner-area">
+      <div class="container">
+        <div class="row">
+          {% for i in blog%}
+          <div class="col-md-6 col-lg-4">
+            <!--== Start Blog Item ==-->
+            <div class="post-item">
+              <div class="inner-content">
+                <div class="thumb">
+                  <a href="blog-details.html"><img src="{{i.photo.url}}" width="370" height="260" alt="Image-HasTech"></a>
+                </div>
+                <div class="content">
+                  <div class="meta-post">
+                    <ul>
+                      <li class="post-date"><i class="fa fa-calendar"></i><a href="blog.html">{{i.date_created |date:'F j, Y' }}</a></li>
+                      <li class="author-info"><i class="fa fa-user"></i><a href="blog.html">{{i.name}}</a></li>
+                    </ul>
+                  </div>
+                  <h4 class="title"><a href="blog-details.html">{{i.title}}</a></h4>
+                  <a class="post-btn" href="/blogdetail/{{i.id}}/">Read More</a>
+                </div>
+              </div>
+            </div>
+            <!--== End Blog Item ==-->
+          </div>
+          {% endfor%}
+        </div>
+      </div>
+    </section>
+    <!--== End Blog Area Wrapper ==-->
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+ 
+
+    <!--== Start Footer Bottom ==-->
+    {% endblock content%}

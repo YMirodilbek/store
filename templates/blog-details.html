@@ -1,0 +1,197 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+  .blog12{
+    color: black;
+    font-family: sans-serif;
+  }
+</style>
+<main class="main-content">
+    <!--== Start Page Header Area Wrapper ==-->
+    <div class="page-header-area" data-bg-img="{% static 'assets/img/photos/bg3.webp'%}">
+      <div class="container pt--0 pb--0">
+        <div class="row">
+          <div class="col-12">
+            <div class="page-header-content">
+              <h2 class="title" data-aos="fade-down" data-aos-duration="1000">Blog Details</h2>
+              <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1200">
+                <ul class="breadcrumb">
+                  <li><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-sep">//</li>
+                  <li>Blog Details</li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--== End Page Header Area Wrapper ==-->
+
+    <!--== Start Blog Area Wrapper ==-->
+    <section class="blog-details-area">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-xl-8" data-aos="fade-right">
+            <div class="blog-details-content-wrap">
+              <div class="blog-details-item">
+                <div class="blog-details-thumb">
+                  <img src="{% static 'assets/img/blog/details1.webp'%}" width="750" height="459" alt="Image-HasTech">
+                </div>
+                <div class="blog-meta-post">
+                  <ul>
+                    <li class="post-date"><i class="fa fa-calendar"></i><a href="blog.html">{{blog.date_created|date:'F j,Y'}}</a></li>
+                    <li class="author-info"><i class="fa fa-user"></i><a href="blog.html">{{blog.name}}</a></li>
+                  </ul>
+                </div>
+                <h3 class="main-title">{{blog.title}}.</h3>
+                <div class="details-wrapper details-wrapper-style1" data-margin-bottom="38">
+                  <p class='blog12'>{{blog.text}}</p>
+                <!-- <div class="blog-details-footer">
+                  <div class="tage-list">
+                    <span>Tages:</span>
+                    <a href="blog.html">Mobile</a>, 
+                    <a href="blog.html">Laptop</a>, 
+                    <a href="blog.html">Smart</a>, 
+                    <a href="blog.html">TV</a>
+                  </div>
+                  <div class="social-icons">
+                    <span>Share:</span>
+                    <a href="#/"><i class="fa fa-facebook"></i></a>
+                    <a href="#/"><i class="fa fa-dribbble"></i></a>
+                    <a href="#/"><i class="fa fa-pinterest-p"></i></a>
+                    <a href="#/"><i class="fa fa-twitter"></i></a>
+                  </div>
+                </div> -->
+                <!-- <div class="article-next-previous">
+                  <div class="arrow-item previous">
+                    <div class="arrow-thumb">
+                      <a href="blog-details.html"><img src="{% static 'assets/img/blog/s4.webp'%}" width="98" height="101" alt=""></a>
+                      <a class="overlay" href="blog-details.html"><i class="fa fa-angle-left"></i></a>
+                    </div>
+                    <div class="arrow-content">
+                      <span class="date"><a href="blog.html"><i class="fa fa-calendar"></i>{{blog.date_created|date:'F j, Y'}}</a></span>
+                      <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                    </div>
+                  </div>
+                  <div class="arrow-item next">
+                    <div class="arrow-thumb">
+                      <a href="blog-details.html"><img src="{% static 'assets/img/blog/s1.webp'%}" width="98" height="101" alt=""></a>
+                      <a class="overlay" href="blog-details.html"><i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="arrow-content">
+                      <span class="date"><a href="blog.html">25 March, 2022<i class="fa fa-calendar"></i></a></span>
+                      <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+            
+          <!-- <div class="col-xl-4" data-aos="fade-left">
+            <div class="blog-sidebar">
+              <div class="blog-sidebar-search">
+                <div class="sidebar-search-form">
+                  <form action="#">
+                    <input type="search" placeholder="Search">
+                    <button><i class="fa fa-search"></i></button>
+                  </form>
+                </div>
+              </div> -->
+
+              <!-- <div class="blog-sidebar-wrap">
+                <div class="blog-sidebar-category">
+                  <h4 class="sidebar-title" data-margin-bottom="23">Categories</h4>
+                  <div class="sidebar-category">
+                    <ul class="category-list">
+                      <li><a href="shop.html">Accesasories<span> (6)</span></a></li>
+                      <li><a href="shop.html">Computer<span> (4)</span></a></li>
+                      <li><a href="shop.html">Covid-19<span> (2)</span></a></li>
+                      <li><a href="shop.html">Electronics<span> (6)</span></a></li>
+                      <li><a href="shop.html">Frame Sunglasses<span> (12)</span></a></li>
+                      <li><a href="shop.html">Furniture<span> (7)</span></a></li>
+                      <li><a href="shop.html">Genuine Leather<span> (9)</span></a></li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="blog-sidebar-post">
+                  <h4 class="sidebar-title">Recent Post</h4>
+                  <div class="sidebar-post">
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/s1.webp'%}" width="98" height="101" alt=""></a>
+                      </div>
+                      <div class="post-content">
+                        <span class="date"><a href="blog.html"><i class="fa fa-calendar"></i>22,Jun 2022</a></span>
+                        <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                      </div>
+                    </div>
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/s2.webp'%}" width="98" height="101" alt=""></a>
+                      </div>
+                      <div class="post-content">
+                        <span class="date"><a href="blog.html"><i class="fa fa-calendar"></i>22,Jun 2022</a></span>
+                        <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                      </div>
+                    </div>
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/s3.webp'%}" width="98" height="101" alt=""></a>
+                      </div>
+                      <div class="post-content">
+                        <span class="date"><a href="blog.html"><i class="fa fa-calendar"></i>22,Jun 2022</a></span>
+                        <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                      </div>
+                    </div>
+                    <div class="single-post">
+                      <div class="post-thumb">
+                        <a href="blog-details.html"><img src="{% static 'assets/img/blog/s4.webp'%}" width="98" height="101" alt=""></a>
+                      </div>
+                      <div class="post-content">
+                        <span class="date"><a href="blog.html"><i class="fa fa-calendar"></i>22,Jun 2022</a></span>
+                        <h6 class="title"><a href="blog-details.html">Lorem ipsum dolorl amet conse adip</a></h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="blog-sidebar-category-sub-menu">
+                  <h4 class="sidebar-title" data-margin-bottom="23">Archives</h4>
+                  <div class="sidebar-category-sub-menu">
+                    <ul class="sub-menu-list">
+                      <li><a href="shop.html">March 2018</a></li>
+                      <li><a href="shop.html">February 2018</a></li>
+                      <li><a href="shop.html">January 2021</a></li>
+                      <li><a href="shop.html">September 2019</a></li>
+                      <li><a href="shop.html">March 2018</a></li>
+                      <li><a href="shop.html">July 2021</a></li>
+                    </ul>
+                  </div>
+                </div> -->
+
+                <!-- <div class="blog-sidebar-tags">
+                  <h4 class="sidebar-title">Tages</h4>
+                  <div class="sidebar-tags">
+                    <ul class="tags-list mb--0">
+                      <li><a href="blog.html">Mobile</a></li>
+                      <li><a href="blog.html">Laptop</a></li>
+                      <li><a href="blog.html">Smart TV</a></li>
+                      <li><a href="blog.html">Pendrive</a></li>
+                      <li><a href="blog.html">Smartwatch</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--== End Blog Area Wrapper ==-->
+  </main>
+
+  <!--== Start Footer Area Wrapper ==-->
+  {% endblock content %}

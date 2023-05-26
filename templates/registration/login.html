@@ -1,0 +1,153 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<style>
+    .pa-bill-form label {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .pa-bill-form label:last-child{
+        margin-bottom: 0;
+    }
+    input{
+        width: 100%;
+        height: 50px;
+        padding:0px 20px;
+        border: 2px solid #D10024;
+        outline: none;
+        border-radius: 50px;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    
+    .pa-btn{
+        background: #D10024;
+        color: #fff;
+        padding: 0px 20px;
+        min-width: 160px;
+        height: 50px;
+        line-height: 46px;
+        border: none;
+        border-radius: 50px;
+        text-transform: capitalize;
+        outline: none;
+        text-align: center;
+        cursor: pointer;
+        border: 2px solid #D10024;
+        transition: 0.3s;
+        display: inline-block;
+    }
+    .pa-btn:hover{
+        outline: none;
+        background: #fff;
+        color: #D10024;
+    }
+    .pa-btn:focus,.modal-header .close {
+        outline: none;
+    }
+    .pa-checkout{
+        padding-top: 76px;
+    }
+    .pa-bill-form label {
+        display: flex;
+        margin-bottom: 20px;
+    }
+    .pa-bill-form label:last-child{
+        margin-bottom: 0;
+    }
+    label.pa-bill-title,p.pa-bill-title {
+        font-size: 25px;
+        font-weight: 600;
+        margin-bottom: 40px;
+    }
+    .pa-bill-form label span {
+        min-width: 120px;
+    }
+    .pa-bill-detail table th{
+        padding: 12px 20px 13px;
+        text-transform: capitalize;
+        border-right: 1px solid #eee;
+    }
+    .pa-bill-detail table td {
+        padding: 15px 20px;
+        text-transform: capitalize;
+        border: 1px solid #eee;
+    }
+    .pa-checkout-total td{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .pa-checkout-total td:last-child {
+        color: #D10024;
+    }
+    .pa-place-order-right {
+        margin-bottom: 20px;
+        text-align: right;
+        margin-left: 20%;
+        font-family: sans-serif;
+        
+        
+    }
+    .pa-place-order-left {
+        text-align: left;
+        margin-top: 20px;
+        margin-left: 20%;
+        font-family: sans-serif;
+        
+
+    }
+  
+
+
+
+</style>
+        
+        
+        <div class="pa-checkout spacer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                </div>
+                <div class="col-lg-6">
+                    <div class="pa-bill-form">
+                       
+                        <form  method="POST">
+                            {% csrf_token %}
+                            <label>
+                                <span>Username</span>
+                                {{form.username}}
+                            </label>
+                            <label>
+                                <span>Password</span>
+                                {{form.password}}
+                            </label>
+                            <div class="pa-place-order-right">
+                                <input type="submit" class="pa-btn" value="Kirish">
+                            </div>
+                            <div class="pa-place-order-left">
+                                <a href='/register/'><input type="text" class="pa-btn" value="Sign-up"></a>
+                            </div>
+                            <label>
+                                {{form.errors}}
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- checkout end -->
+    <!-- footer start -->
+
+
+    <script src="{% static 'login/assets/js/jquery.min.js'%}"></script>
+    <script src="{% static 'login/assets/js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'login/assets/js/SmoothScroll.min.js'%}"></script>
+    <script src="{% static 'login/assets/js/swiper.min.js'%}"></script>
+    <script src="{% static 'login/assets/js/custom.js'%}"></script>
+{% endblock content%}
+</body>
+</html>
